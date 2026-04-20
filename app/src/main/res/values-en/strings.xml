@@ -93,6 +93,8 @@
     <string name="widget_cargando">Loading...</string>
     <string name="widget_sin_pendientes">No pending! </string>
     <string name="widget_pendientes">Pending: %1$d</string>
+    <string name="widget_sin_conexion">No connection</string>
+
 
 
 </resources>
