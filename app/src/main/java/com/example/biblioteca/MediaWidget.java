@@ -11,27 +11,47 @@ import android.widget.RemoteViews;
 import androidx.work.ExistingWorkPolicy;
 import androidx.work.OneTimeWorkRequest;
 import androidx.work.WorkManager;
+import android.content.SharedPreferences;
 
-public class MediaWidget extends AppWidgetProvider { //widget para mostrar el número de pelis/series pendientes de devolver
+public class MediaWidget extends AppWidgetProvider {
 
     private static final String TAG = "MediaWidget";
     public static final String ACCION_ACTUALIZAR = "com.example.biblioteca.ACTUALIZAR_WIDGET";
-
-    // Nombre único para el worker: evita que se encolen múltiples copias a la vez
     private static final String WORKER_NAME = "media_widget_worker";
 
     @Override
-    public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) { //se llama cada vez que se actualiza el widget (cada 30 min por la alarma, o al agregarlo a la pantalla)
+    public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         Log.d(TAG, "onUpdate() llamado. Instancias: " + appWidgetIds.length);
+        SharedPreferences prefs = context.getSharedPreferences("widget_prefs", Context.MODE_PRIVATE);
+        String ultimoTexto = prefs.getString("ultimo_texto", context.getString(R.string.widget_cargando));
         for (int id : appWidgetIds) {
-            updateWidget(context, appWidgetManager, id,
-                    context.getString(R.string.widget_cargando));
+            updateWidget(context, appWidgetManager, id, ultimoTexto);
         }
-        lanzarWorker(context);
+    }
+
+public static void updateWidget(Context context, AppWidgetManager manager,
+                                int appWidgetId, String texto) {
+    Log.d(TAG, "updateWidget() id=" + appWidgetId + " texto='" + texto + "'");
+
+    context.getSharedPreferences("widget_prefs", Context.MODE_PRIVATE)
+            .edit().putString("ultimo_texto", texto).apply();
+
+    RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.media_widget);
+    views.setTextViewText(R.id.tvWidgetPendientes, texto);
+    views.setTextViewText(R.id.tvWidgetTitulo, context.getString(R.string.widget_titulo));
+
+    Intent intent = new Intent(context, MediaWidget.class);
+    intent.setAction(ACCION_ACTUALIZAR);
+    intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
+    PendingIntent pi = PendingIntent.getBroadcast(context, appWidgetId, intent,
+            PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+    views.setOnClickPendingIntent(R.id.tvWidgetPendientes, pi);
+
+    manager.updateAppWidget(appWidgetId, views);
     }
 
     @Override
-    public void onEnabled(Context context) { //se llama la primera vez que se agrega el widget a la pantalla, o si se agrega otro después de haber eliminado el último
+    public void onEnabled(Context context) {
         Log.d(TAG, "onEnabled() - configurando alarma cada 30 min.");
         AlarmManager am = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(context, WidgetAlarmReceiver.class);
@@ -39,11 +59,11 @@ public class MediaWidget extends AppWidgetProvider { //widget para mostrar el n�
                 PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
         am.setRepeating(AlarmManager.RTC,
                 System.currentTimeMillis() + 5000,
-                1800000, pi); ///se actualiza cada 30 minutos (1800000 ms) y la primera vez a los 5 segundos (5000 ms) para pruebas rápidas
+                1800000, pi);
     }
 
     @Override
-    public void onDisabled(Context context) {//se llama cuando se elimina el último widget de la pantalla, o si se elimina un widget y no quedan más
+    public void onDisabled(Context context) {
         Log.d(TAG, "onDisabled() - cancelando alarma.");
         AlarmManager am = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(context, WidgetAlarmReceiver.class);
@@ -53,7 +73,7 @@ public class MediaWidget extends AppWidgetProvider { //widget para mostrar el n�
     }
 
     @Override
-    public void onReceive(Context context, Intent intent) {//se llama cada vez que se recibe una acción, ya sea la de actualización periódica o la de click en el widget
+    public void onReceive(Context context, Intent intent) {
         Log.d(TAG, "onReceive() acción recibida: " + intent.getAction());
         super.onReceive(context, intent);
 
@@ -67,6 +87,7 @@ public class MediaWidget extends AppWidgetProvider { //widget para mostrar el n�
                 return;
             }
 
+            // Muestra cargando y lanza el worker al tocar el widget
             AppWidgetManager manager = AppWidgetManager.getInstance(context);
             updateWidget(context, manager, widgetId,
                     context.getString(R.string.widget_cargando));
@@ -74,7 +95,7 @@ public class MediaWidget extends AppWidgetProvider { //widget para mostrar el n�
         }
     }
 
-    public static void lanzarWorker(Context context) {//se llama desde el onUpdate y desde el onReceive al hacer click en el widget, para actualizar su contenido
+    public static void lanzarWorker(Context context) {
         Log.d(TAG, "lanzarWorker()");
         OneTimeWorkRequest request =
                 new OneTimeWorkRequest.Builder(MediaWidgetWorker.class).build();
@@ -82,22 +103,4 @@ public class MediaWidget extends AppWidgetProvider { //widget para mostrar el n�
                 .enqueueUniqueWork(WORKER_NAME, ExistingWorkPolicy.REPLACE, request);
     }
 
-    //método para actualizar el contenido del widget, se llama desde el worker cuando obtiene el número de pelis/series pendientes
-    public static void updateWidget(Context context, AppWidgetManager manager,
-                                    int appWidgetId, String texto) {
-        Log.d(TAG, "updateWidget() id=" + appWidgetId + " texto='" + texto + "'");
-
-        RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.media_widget);
-        views.setTextViewText(R.id.tvWidgetPendientes, texto);
-
-        Intent intent = new Intent(context, MediaWidget.class);
-        intent.setAction(ACCION_ACTUALIZAR);
-        intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
-        PendingIntent pi = PendingIntent.getBroadcast(context, appWidgetId, intent,
-                PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
-        views.setOnClickPendingIntent(R.id.tvWidgetPendientes, pi);
-        views.setTextViewText(R.id.tvWidgetTitulo,context.getString(R.string.widget_titulo));
-
-        manager.updateAppWidget(appWidgetId, views);
-    }
 }
