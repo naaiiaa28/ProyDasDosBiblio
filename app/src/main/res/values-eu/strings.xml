@@ -92,6 +92,7 @@
     <string name="widget_cargando">Kargatzen...</string>
     <string name="widget_sin_pendientes">Zainik gabe! </string>
     <string name="widget_pendientes">Zain: %1$d</string>
+    <string name="widget_sin_conexion">Konexio gabe</string>
 
 
 </resources>
