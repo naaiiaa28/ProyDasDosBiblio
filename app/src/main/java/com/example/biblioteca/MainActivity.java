@@ -21,7 +21,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import androidx.work.PeriodicWorkRequest;
-import com.example.biblioteca.RecordatorioWorker;
 
 import java.util.concurrent.TimeUnit;
 
@@ -99,13 +98,7 @@ public class MainActivity extends AppCompatActivity {
         configurarFiltros();
         cargarListaRemota(); // carga inicial desde servidor
 
-        PeriodicWorkRequest workRequest =
-            new PeriodicWorkRequest.Builder(
-                    RecordatorioWorker.class,
-                    15, TimeUnit.MINUTES
-            ).build();
 
-        WorkManager.getInstance(this).enqueue(workRequest);
     }
 
     // Pide al servidor la lista de items del usuario logueado,
