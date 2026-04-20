@@ -1,0 +1,10 @@
+<resources>
+    <style name="Theme.Biblioteca" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/toolbar_color</item>
+        <item name="colorPrimaryVariant">@color/acento_morado</item>
+        <item name="colorOnPrimary">@color/blanco</item>
+        <item name="colorSecondary">@color/acento_morado</item>
+        <item name="android:windowBackground">@color/fondo</item>
+        <item name="colorSurface">@color/fondo</item>
+    </style>
+</resources>

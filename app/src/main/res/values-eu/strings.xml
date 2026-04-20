@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MiPantalla</string>
+    <string name="añadir">Gehitu</string>
+    <string name="editar">Editatu</string>
+    <string name="guardar">GORDE</string>
+    <string name="eliminar">Ezabatu</string>
+    <string name="cancelar">Utzi</string>
+    <string name="titulo">Izenburua *</string>
+    <string name="tipo">Mota</string>
+    <string name="genero">Generoa</string>
+    <string name="estado">Egoera</string>
+    <string name="puntuacion">Puntuazioa (0-5)</string>
+    <string name="resumen">Laburpena</string>
+    <string name="comentario">Nire iruzkina</string>
+    <string name="datos_serie">Seriearen jarraipena</string>
+    <string name="temporadas_totales">Denboraldi guztiak</string>
+    <string name="temporada_actual">Uneko denboraldia</string>
+    <string name="capitulo_actual">Uneko kapitulua</string>
+    <string name="hint_titulo">Adib: Arcane</string>
+    <string name="hint_genero">Adib: Beldurra, Ekintza...</string>
+    <string name="hint_resumen">Zertaz doan...</string>
+    <string name="hint_comentario">Zer iruditzen zait...</string>
+    <string name="vacio">Oraindik ez dago izenbururik.\nSakatu + bat gehitzeko!</string>
+    <string name="descartar_titulo">Aldaketak baztertu</string>
+    <string name="descartar_mensaje">Ziur zaude gorde gabe irten nahi duzula?</string>
+    <string name="salir">Irten</string>
+    <string name="seguir_editando">Editatzen jarraitu</string>
+    <string name="eliminar_titulo">Ezabatu</string>
+    <string name="eliminar_mensaje">"%s" zure liburutegitik ezabatu?</string>
+    <string name="sin_resumen">Laburpenik ez</string>
+    <string name="sin_comentario">Iruzkinik ez</string>
+    <string name="progreso_texto">%3$d denboraldietatik %1$d. denboraldia, %2$d. kapitulua</string>
+    <string name="tipo_pelicula">Filma</string>
+    <string name="tipo_serie">Seriea</string>
+    <string name="estado_visto">Ikusita</string>
+    <string name="estado_en_progreso">Ikusteko</string>
+    <string name="estado_pendiente">Zain</string>
+    <string name="filtro_todos">Denak</string>
+    <string name="cambiar_idioma">Hizkuntza</string>
+    <string name="toolbar_principal"> MiPantalla</string>
+    <string name="resumen_label"> Laburpena</string>
+    <string name="comentario_label"> Nire iruzkina</string>
+    <string name="progreso_label"> Aurrerakuntza</string>
+    <string name="imagen">Irudia</string>
+    <string name="seleccionar_imagen"> Irudia aukeratu</string>
+    <string name="titulo_obligatorio">Izenburua derrigorrezkoa da</string>
+    <string name="notif_añadida">gehitu da</string>
+    <string name="notif_mensaje">zure liburutegian dago jada 🎬</string>
+
+    <string name="cerrar_sesion_titulo">Saioa Itxi</string>
+    <string name="cerrar_sesion_mensaje">Ziur zaude saioa itxi nahi duzula?</string>
+
+    <string name="crear_cuenta">Kontua sortu</string>
+    <string name="nombre_completo">Izena osoa</string>
+    <string name="email">Email</string>
+    <string name="contrasena">Pasahitza</string>
+    <string name="registrarme">Erregistratu</string>
+
+    <string name="bienvenido">Ongi etorri!</string>
+    <string name="iniciar_sesion_texto">Saioa hasi jarraitzeko</string>
+    <string name="entrar">Sartu</string>
+    <string name="no_cuenta">Ez duzu konturik? Erregistratu hemen</string>
+
+    <string name="uploading_photo">Argazkia igotzen...</string>
+    <string name="photo_updated">Argazkia eguneratu da</string>
+    <string name="server_error">Zerbitzariaren errorea</string>
+    <string name="invalid_response">Zerbitzaritik erantzun baliogabea</string>
+
+    <string name="anadir_imagen">Irudia gehitu</string>
+    <string name="nombre_usuario">Erabiltzaile izena</string>
+    <string name="email_ejemplo">correo@ejemplo.com</string>
+    <string name="cerrar_sesion">Saioa itxi</string>
+    <string name="volver">Itzuli</string>
+    
+    <string name="cinema_details">Zinema xehetasunak</string>
+    <string name="phone">Telefonoa</string>
+    <string name="schedule">Ordutegia</string>
+    <string name="website">Webgunea</string>
+    <string name="rating">Balorazioa</string>
+    <string name="close">Itxi</string>
+    <string name="gps_disabled_title">Kokalekua desaktibatuta</string>
+    <string name="gps_disabled_message">Gaitu GPSa kanpoako zinemak ikusteko</string>
+    <string name="activate">Aktibatu</string>
+    <string name="cancel">Utzi</string>
+
+    <string name="notif_titulo">Ohartarazpena</string>
+    <string name="notif_con_pendientes">%1$d zain dituzu</string>
+    <string name="notif_sin_pendientes">Ez duzu zain dauden filmarik edo serierik</string>
+
+    <string name="widget_titulo">MiPantalla</string>
+    <string name="widget_cargando">Kargatzen...</string>
+    <string name="widget_sin_pendientes">Zainik gabe! </string>
+    <string name="widget_pendientes">Zain: %1$d</string>
+
+
+</resources>

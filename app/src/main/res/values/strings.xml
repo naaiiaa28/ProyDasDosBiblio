@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MiPantalla</string>
+    <string name="añadir">Añadir</string>
+    <string name="editar">Editar</string>
+    <string name="guardar">GUARDAR</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="titulo">Título *</string>
+    <string name="tipo">Tipo</string>
+    <string name="genero">Género</string>
+    <string name="estado">Estado</string>
+    <string name="puntuacion">Puntuación (0-5)</string>
+    <string name="resumen">Resumen</string>
+    <string name="comentario">Mi reseña</string>
+    <string name="datos_serie">Seguimiento de la serie</string>
+    <string name="temporadas_totales">Temporadas totales</string>
+    <string name="temporada_actual">Temporada actual</string>
+    <string name="capitulo_actual">Capítulo actual</string>
+    <string name="hint_titulo">Ej: Arcane</string>
+    <string name="hint_genero">Ej: Terror, Acción...</string>
+    <string name="hint_resumen">De qué va...</string>
+    <string name="hint_comentario">Lo que opino...</string>
+    <string name="vacio">No hay títulos aún.\n¡Pulsa + para añadir uno!</string>
+    <string name="descartar_titulo">Descartar cambios</string>
+    <string name="descartar_mensaje">¿Seguro que quieres salir sin guardar?</string>
+    <string name="salir">Salir</string>
+    <string name="seguir_editando">Seguir editando</string>
+    <string name="eliminar_titulo">Eliminar</string>
+    <string name="eliminar_mensaje">¿Eliminar "%s" de tu biblioteca?</string>
+    <string name="sin_resumen">Sin resumen</string>
+    <string name="sin_comentario">Sin comentario</string>
+    <string name="progreso_texto">Temporada %1$d, Capítulo %2$d de %3$d temporadas</string>
+    <string name="tipo_pelicula">Película</string>
+    <string name="tipo_serie">Serie</string>
+    <string name="estado_visto">Visto</string>
+    <string name="estado_en_progreso">En progreso</string>
+    <string name="estado_pendiente">Pendiente</string>
+    <string name="filtro_todos">Todos</string>
+    <string name="cambiar_idioma">Idioma</string>
+    <string name="toolbar_principal"> MiPantalla</string>
+    <string name="resumen_label"> Resumen</string>
+    <string name="comentario_label"> Mi comentario</string>
+    <string name="progreso_label"> Progreso</string>
+    <string name="imagen">Imagen</string>
+    <string name="seleccionar_imagen"> Seleccionar imagen</string>
+    <string name="titulo_obligatorio">El título es obligatorio</string>
+    <string name="notif_añadida">añadida</string>
+    <string name="notif_mensaje">ya está en tu biblioteca 🎬</string>
+
+    <string name="cerrar_sesion_titulo">Cerrar Sesión</string>
+    <string name="cerrar_sesion_mensaje">¿Estás seguro de que quieres salir?</string>
+
+    <string name="crear_cuenta">Crear cuenta</string>
+    <string name="nombre_completo">Nombre completo</string>
+    <string name="email">Email</string>
+    <string name="contrasena">Contraseña</string>
+    <string name="registrarme">Registrarme</string>
+
+    <string name="bienvenido">¡Bienvenido!</string>
+    <string name="iniciar_sesion_texto">Inicia sesión para continuar</string>
+    <string name="entrar">Entrar</string>
+    <string name="no_cuenta">¿No tienes cuenta? Regístrate aquí</string>
+
+    <string name="uploading_photo">Subiendo foto...</string>
+    <string name="photo_updated">Foto actualizada</string>
+    <string name="server_error">Error servidor</string>
+    <string name="invalid_response">Respuesta inválida del servidor</string>
+
+    <string name="anadir_imagen">Añadir imagen</string>
+    <string name="nombre_usuario">Nombre Usuario</string>
+    <string name="email_ejemplo">correo@ejemplo.com</string>
+    <string name="cerrar_sesion">Cerrar sesión</string>
+    <string name="volver">Volver</string>
+
+    <string name="cinema_details">Detalles del cine</string>
+    <string name="phone">Teléfono</string>
+    <string name="schedule">Horario</string>
+    <string name="website">Web</string>
+    <string name="rating">Valoración</string>
+    <string name="close">Cerrar</string>
+    <string name="gps_disabled_title">Ubicación desactivada</string>
+    <string name="gps_disabled_message">Activa el GPS para ver cines cercanos</string>
+    <string name="activate">Activar</string>
+    <string name="cancel">Cancelar</string>
+
+    <string name="notif_titulo">Recordatorio</string>
+    <string name="notif_con_pendientes">Tienes %1$d pendientes</string>
+    <string name="notif_sin_pendientes">No tienes películas o series pendientes</string>
+
+    <string name="widget_titulo">MiPantalla</string>
+    <string name="widget_cargando">Cargando...</string>
+    <string name="widget_sin_pendientes">¡Sin pendientes! </string>
+    <string name="widget_pendientes">Pendientes: %1$d</string>
+
+
+</resources>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tipos">
+        <item>Película</item>
+        <item>Serie</item>
+    </string-array>
+
+    <string-array name="estados">
+        <item>Visto</item>
+        <item>En progreso</item>
+        <item>Pendiente</item>
+    </string-array>
+
+    <string-array name="filtros">
+        <item>Todos</item>
+        <item>Visto</item>
+        <item>En progreso</item>
+        <item>Pendiente</item>
+    </string-array>
+</resources>

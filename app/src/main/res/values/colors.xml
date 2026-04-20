@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="fondo">#FAF8F5</color>
+    <color name="card_oscuro">#2D2D2D</color>
+    <color name="texto_en_card">#FFFFFF</color>
+    <color name="titulo_morado">#9B59B6</color>
+    <color name="acento_morado">#A569BD</color>
+    <color name="toolbar_color">#7D3C98</color>
+    <color name="fab_color">#A569BD</color>
+    <color name="verde_visto">#4CAF50</color>
+    <color name="naranja_progreso">#FF9800</color>
+    <color name="gris_pendiente">#9E9E9E</color>
+    <color name="blanco">#FFFFFF</color>
+    <color name="negro">#000000</color>
+    <color name="texto_secundario">#555555</color>
+</resources>
