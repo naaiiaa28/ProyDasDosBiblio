@@ -92,6 +92,8 @@
     <string name="widget_cargando">Cargando...</string>
     <string name="widget_sin_pendientes">¡Sin pendientes! </string>
     <string name="widget_pendientes">Pendientes: %1$d</string>
+    <string name="widget_sin_conexion">Sin conexión</string>
+
 
 
 </resources>
